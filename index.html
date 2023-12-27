@@ -1,0 +1,36 @@
+<!DOCTYPE html> 
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>
+        granite's
+    </title>
+    <link href="style.css" rel="stylesheet" type="text/css"/>
+
+</head>
+
+<body>
+    <script>
+        // function getAnimalData(){
+        //     const response = fetch("https://fakerapi.it/api/v1/persons")
+        //     .then(function(response){
+        //         const json = response.json()
+        //         .then(function(finalData){
+        //             document.getElementById("userData").innerHTML = JSON.stringify(finalData)
+        //         })
+        //     })
+        // }
+
+        async function getAnimalData(){
+            const response = await fetch("https://fakerapi.it/api/v1/persons")
+            const finalData = await response.json()
+                   document.getElementById("userData").innerHTML = JSON.stringify(finalData)
+        }
+
+    </script>
+</body>
+    <div id = "userData"></div>
+    <button onclick="getAnimalData()">Get animal data</button>
+</html>
